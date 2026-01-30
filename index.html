@@ -3,118 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- UNIQUE TITLE & DESCRIPTION -->
 <title>ONEBOXHub50 – GitHub Official Version | All-in-One Tools</title>
-<meta name="description" content="ONEBOX official GitHub edition. Access all apps, tools, and resources in one place. Latest updates, APK downloads, and services directly from GitHub Pages.">
-
 <style>
 /* ===== General Reset ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-body { background:#f5f5f5; color:#333; min-height:100vh; overflow-x:hidden;
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
   background-image:url("J1.jpeg");
   background-size:cover;
-  width:100%;
   background-position:center;
-  background-attachment: fixed;
   background-repeat:no-repeat;
+  z-index:-1;
 }
+
 /* ===== Header ===== */
 header {
-  width:100%; height:45px; background:#ff6f61; display:flex; justify-content:center; align-items:center;
-  font-family: Georgia; font-size:20px; letter-spacing:3px; color:white; position:sticky; top:0; z-index:999;
+  width:100%; height:50px; background:#ff6f61; display:flex; justify-content:center; align-items:center;
+  font-family: Georgia; font-size:16px; letter-spacing:3px; color:white; position:sticky; top:0; z-index:999;
   background-image: url("J2.jpeg"); background-size:cover; background-position:center; background-attachment:fixed;
-  text-align:center;
-  padding-right:16px;
+    text-align:center;
+    padding-right:16px;
+    border-bottom:1px solid yellow;
 }
 
 /* ===== Navigation ===== */
 nav {
-  width:100%; background:#e94e3f; display:inline-block;justify-content:center; gap:80px; font-size:15px;
-  font-family: Georgia;top:45px; z-index:998;word-spacing:100px;
+  width:100%; background:#e94e3f; display:inline-block;justify-content:center; gap:30px; font-size:12px;
+  font-family: Georgia; top:50px; z-index:998;word-spacing:15px;
+  
   position:sticky;
   background-image:url("J3.jpeg");
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
-  background-repeat:no-repeat;
   text-align:center;
-  height:44px;
-  padding-top:3px;
-  border-bottom:2px solid black;
-  padding-bottom:7.50px;
+  height:47px;
+  padding-top:5px;
+  border-bottom:1.50px solid red ;
 }
-nav a {color:white; text-decoration:none; font-weight:bold; transition:0.3s; font-size:20px;}
+nav a {color:white; text-decoration:none; font-weight:bold; transition:0.3s; font-size:12px;}
 nav a:hover { color:yellow; }
 
 
 
 /* ===== Search ===== */
-.search-container { width:90%; max-width:900px; margin:10px auto; position:relative; }
-.search-container input { width:100%; padding:15px 50px 15px 20px; border-radius:45px; border:2.25px solid black; font-size:1.5em; outline:none; height:60px; }
-.search-container button { position:absolute; top:50%; transform:translateY(-50%); border:none; background:none; cursor:pointer; }
+.search-container {
+  width:95%; max-width:768px; margin:10px auto; position:relative;
+  
+}
+.search-container input {
+  width:100%; padding:15px 50px 15px 20px;border-radius:50px; border:2.25px solid black; font-size:1.5em;
+  outline:none; height:60px;
+ background-color:white; background-size:cover;background-attachment:fixed;background-repeat:no-repeat;
+  
+  
+}
+.search-container button {
+  position:absolute; top:50%; transform:translateY(-50%); border:none; background:none; cursor:pointer;
+}
+
 #searchBtn { right:5%; margin-top:1.5px;}
-#searchBtn img { width:30px; height:30px;background-color:green;border:2px solid black;border-radius:25%;}
-#clearBtn { right:19%; font-size:30px; display:inline-block; }
+#searchBtn img { width:30px; height:28px;background-color:green;border:2px solid black;border-radius:25%;}
+#clearBtn { right:17%; font-size:33px; display:inline-block;}
+
+
+
+/* Suggestions */
 #suggestions { width:50%; margin:10px auto; text-align:center; font-size:1em; }
 #suggestions div { padding:5px; cursor:pointer; border-bottom:1px solid #ccc; background:rgba(0,0,0,0.6); color:white; }
 #suggestions div:hover { background:yellow; color:black; }
 
 /* ===== Slider ===== */
-.slider {width:90%; max-width:900px; margin:10px auto; overflow:hidden; border:2px solid transparent; height:400px; }
-.slides { display:flex; transition: transform 1s ease-in-out; height:400px; }
-.slide { min-width:100%; height:400px; }
+.slider {width:95%; max-width:768px; margin:10px auto; overflow:hidden; border:2px solid black; height:175px; border-radius:3px;}
+.slides { display:flex; transition: transform 1s ease-in-out; height:175px; width:100%;}
+.slide { min-width:100%; height:175px; background-size:cover;}
 .slide img { width:100%; height:100%; object-fit:cover; }
-.dots { text-align:center; margin:10px 0; }
-.dot { display:inline-block; width:7px; height:7px; margin:0 10px; background:white; border-radius:50%; cursor:pointer; }
+.dots { text-align:center; margin:5px 0;margin-top:-7px; 
+  
+}
+.dot { display:inline-block; width:8px; height:8px; margin:0 7px; background:white; border-radius:50%; cursor:pointer;border:1px solid black; }
 .dot.active { background:black; }
 
 /* ===== Ticker ===== */
-.ticker { width:100%; margin:5px auto; overflow:hidden; white-space:nowrap; background:#333; color:white; padding-top:7px; font-size:2px; height:47px;}
-.ticker-text { display:inline-block; animation:tickerAnim 20s linear infinite; letter-spacing:3px; }
+.ticker { width:100%; margin:5px auto; overflow:hidden; white-space:nowrap;background:#333; color:white; padding:10px; font-size:2px; height:47px;background-image:url("30.jpeg");}
+.ticker-text { display:inline-block; animation:tickerAnim 20s linear infinite; letter-spacing:3px;font-size:13px; }
 @keyframes tickerAnim {0%{transform:translateX(100%);} 100%{transform:translateX(-100%);}}
 
 /* ===== Typewriter ===== */
-.typewriter-box { width:50%; max-width:600px; margin:5px auto; padding:20px 30px; border:1.25px solid black; border-radius:4px; background:brown; color:white; font-size:1.2em; letter-spacing:2px; background-image:url('7J.jpeg'); background-size:cover; background-position:center; margin-left:1px; }
+.typewriter-box { width:50%; max-width:600px; margin:5px auto; padding:5px 10px; border:2px solid black; border-radius:2px; background:brown; color:white; font-size:13px; font-family:Georgia; letter-spacing:2px; background-image:url('7J.jpeg');e background-size:cover; background-position:center;
+  margin-left:1px;
+}
 .cursor { display:inline-block; width:2px; background:yellow; margin-left:5px; animation: blink 0.7s infinite; }
 @keyframes blink {0%,100%{opacity:1;}50%{opacity:0;}}
 
 /* ===== Categories ===== */
 #categories { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; width:90%; margin:20px auto; }
-.category { flex:1 1 300px; max-width:300px; min-height:400px; background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 0 15px rgba(0,0,0,0.3); display:flex; flex-direction:column; transition:0.3s; background-color:black;
+.category{
+  flex:1 1 152px;
+  width:152px;
+  height:390px;
+  background-color:black;
   background-size:cover;
   background-position:center;
-  background-attachment:fixed;
-  background-repeat:no-repeat;color:white;}
+  background-repeat:no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  margin:1px auto;
+  color:white;}
+}
 .category:hover { transform:translateY(-10px); box-shadow:0 0 25px rgba(0,0,0,0.5); }
 .category img { width:100%; height:200px; object-fit:cover; }
-.category h3 { padding:10px; font-family:Georgia; font-size:1.2em; }
-.category p { padding:0 10px; flex:1; font-size:0.9em; line-height:1.5em; background-image:url("J3.jpeg");
+.category p1 { padding:5px; font-family:Georgia; font-size:13px;
+ 
+}
+.category p { padding:1px; flex:1; font-size:12px;text-align:center;line-height:30px;}
+.category a{
+  width:90%;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-image:url("24.jpeg");
   background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-  background-repeat:no-repeat;}
-.category a { text-align:center; padding:10px; margin:10px; text-decoration:none; background:green; color:white; border-radius:10px; font-weight:bold; transition:0.3s; }
+  background-repeat:no-repeat;
+  text-decoration:none;
+  font-size:18px;
+  color:white;
+  background-color:green;
+  font-family:georgia;
+  
+  letter-spacing:3px;
+  padding-top:2px;
+  margin:10px auto ;
+  
+}
 .category a:hover { background:yellow; color:black; }
 
 /* ===== Highlight ===== */
 .highlight { background:yellow; font-weight:bold; color:black; }
 
 /* ===== Responsive ===== */
-@media(max-width:768px){ nav { flex-direction:column; gap:10px; font-size:1.2em; } .slider, .slides, .slide { height:250px; } .category { min-height:300px; } .category img { height:150px; } .typewriter-box { font-size:1em; padding:15px; } }
-@media(max-width:480px){ .search-container input { font-size:1em; padding:10px 40px; height:50px; } .ticker { font-size:1em; padding:8px; } }
-#searchInput{ padding-right:90px; }
+@media(max-width:768px){
+  nav { flex-direction:column; gap:10px; font-size:1.2em; }
+  
+  .category img { height:150px; }
+  
+}
+@media(max-width:480px){
+  .search-container input { font-size:1em; padding:10px 40px; height:50px; }
+  .ticker { font-size:1em; padding:8px; }
+}
+
+/* ===== Smooth Scroll ===== */
 html { scroll-behavior:smooth; }
+
+#searchInput{
+  height:40px;
+  padding-right:110px;
+  
+}
 </style>
 </head>
 <body>
+
 <header>ONEBOXHUB50</header>
 
 <nav>
-  <a href="#">Home</a>
-  <a href="#">Contact</a>
+  <a href="index.html">Home|</a>
+  <a href="#">Contact|</a>
 </nav>
-
 
 
 <div class="search-container">
@@ -126,9 +189,9 @@ html { scroll-behavior:smooth; }
 
 <div class="slider">
   <div class="slides" id="slides">
-    <div class="slide"><img src="4J.jpeg" alt="image1"></div>
-    <div class="slide"><img src="5J.jpeg" alt="image2"></div>
-    <div class="slide"><img src="6J.jpeg" alt="image3"></div>
+    <div class="slide"><img src="4J.jpeg"></div>
+    <div class="slide"><img src="5J.jpeg"></div>
+    <div class="slide"><img src="6J.jpeg"></div>
   </div>
 </div>
 <div class="dots" id="dots"></div>
@@ -136,24 +199,119 @@ html { scroll-behavior:smooth; }
 <div class="ticker"><div class="ticker-text">"ONEBOX Hub – All your apps and tools in one place!"</div></div>
 
 <div class="typewriter-box"><span id="animatedText"></span><span class="cursor"></span></div>
-
+<div class="v"></div>
 <div id="categories">
   <div class="category">
     <img src="4J.jpeg">
-    <h3>SHOPPING HUB</h3>
-    <p>Discover gadgets, phones, laptops, and home essentials. Exclusive deals and faster delivery directly from GitHub Pages version.</p>
+    <p1>SHOPPING HUB</p1>
+    <br>
+    <p>Category Number=1
+    <br>
+    Next Category=10
+    
+    </p>
     <a href="https://shahidfarooq527.github.io/BESTSHOP1/">OPEN</a>
   </div>
   <div class="category">
     <img src="5J.jpeg">
-    <h3>ENGLISH SPEAKING COURSE</h3>
-    <p>Official GitHub ONEBOX version offers English lessons for beginners. Interactive exercises, pronunciation tips, and daily practice lessons included. Track your progress easily.</p>
+    <p1>ENGLISH SPEAKING COURSE</p1>
+    <br>
+    <p>Category Number=2
+    <br>
+    Next Category=10
+    
+   </p>
     <a href="#">OPEN</a>
   </div>
   <div class="category">
     <img src="6J.jpeg">
-    <h3>Weather App</h3>
-    <p>Check live weather updates directly from the ONEBOX GitHub version. Quick, clean, and accurate. Works smoothly on all devices and internet speeds.</p>
+    <p1>WEATHER</p1>
+    <p>
+      <br>
+      Category Number=3
+    <br>
+    Next Category=10
+    
+   </p>
+    <a href="index3.html">OPEN</a>
+  </div>
+    <div class="category">
+    <img src="4.jpeg">
+    <p1>(EMPTY)</p1>
+    <p>
+      <br>
+      Category Number=4
+    <br>
+    Next Category=0
+    
+   </p>
+    <a href="#">OPEN</a>
+  </div>
+    <div class="category">
+    <img src="5.jpeg">
+    <p1>(EMPTY)</p1>
+    <br>
+    <p>Category Number=5
+    <br>
+    Next Category=0
+    
+   </p>
+    <a href="#">OPEN</a>
+  </div>
+    <div class="category">
+    <img src="6.jpeg">
+    <p1>(EMPTY)</p1>
+      <br>
+      <p>
+      Category Number=6
+    <br>
+    Next Category=0
+    
+   </p>
+    <a href="#">OPEN</a>
+  </div>
+    <div class="category">
+    <img src="7.jpeg">
+    <p1>(EMPTY)</p1>
+    <br>
+    <p>Category Number=7
+    <br>
+    Next Category=0
+    
+   </p>
+    <a href="#">OPEN</a>
+  </div>
+    <div class="category">
+    <img src="8.jpeg">
+    <p1>(EMPTY)</p1>
+    <br>
+    <p>Category Number=8
+    <br>
+    Next Category=0
+    
+   </p>
+    <a href="#">OPEN</a>
+  </div>
+    <div class="category">
+    <img src="9.jpeg">
+    <p1>(EMPTY)</p1>
+    <br>
+    <p>Category Number=9
+    <br>
+    Next Category=0
+    
+   </p>
+    <a href="#">OPEN</a>
+  </div>
+    <div class="category">
+    <img src="10.jpeg">
+    <p1>(EMPTY)</p1>
+    <br>
+    <p>Category Number=10
+    <br>
+    Next Category=0
+    
+   </p>
     <a href="#">OPEN</a>
   </div>
 </div>
@@ -188,7 +346,7 @@ function type(){ if(charIndex<sentences[currentSentence].length){ textElement.te
 function erase(){ if(charIndex>0){ textElement.textContent=sentences[currentSentence].substring(0,--charIndex); setTimeout(erase,30);} else{ currentSentence=(currentSentence+1)%sentences.length; setTimeout(type,500);}}
 document.addEventListener("DOMContentLoaded",()=>setTimeout(type,500));
 
-// ===== Search Highlight =====
+// ===== Search Highlight with Scroll Back =====
 const searchInput=document.getElementById("searchInput");
 const suggestions=document.getElementById("suggestions");
 const categories=document.querySelectorAll(".category");
@@ -224,6 +382,7 @@ function highlightAndScroll(searchText){
 
   const originalScroll = window.scrollY || window.pageYOffset;
 
+  // Sort alphabetically
   matches.sort((a,b)=>a.innerText.localeCompare(b.innerText));
 
   let index = 0;
@@ -248,6 +407,32 @@ document.getElementById("clearBtn").addEventListener("click",()=>{
   searchInput.value=""; suggestions.innerHTML="";
   categories.forEach((cat,i)=>cat.innerHTML=originalContent[i]);
 });
+
+
+
+
+
+
+
+
+
+  // Ye tab kaam karta hai jab app WebView ya PWA ho
+  window.addEventListener("popstate", function(event) {
+    // Back button press hua
+    // Yahan apna custom code likhein
+    if (window.location.pathname !== "/home") {
+      // Agar current page home nahi hai to wapas home page pe jao
+      window.history.back(); // ya custom page redirect
+    } else {
+      // Agar home page hai to user ko exit confirm karwa sakte hain
+      if (confirm("App se exit karna chahte hain?")) {
+        navigator.app.exitApp(); // Cordova/Capacitor ke liye
+      }
+    }
+  });
+
+  // History state push karna zaruri hai back button ke liye
+  history.pushState({}, "");
 
 </script>
 </body>
